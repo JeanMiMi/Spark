@@ -1,0 +1,91 @@
+Contenu du git :
+-------------------
+
+build.sbt
+plugins.sbt
+src.tar.gz qui contient le fichier src/main/scala/com/sparkProject/JobML.scala
+
+
+Commande pour lancer le programme sur mon poste :
+-------------------------------------------------
+
+sbt assembly pour compiler, puis :
+
+cd /home/jean-michel/Desktop/Spark/spark-2.0.0-bin-hadoop2.7/bin pour se positionner dans le bon répertoire 
+
+./spark-submit --conf spark.eventLog.enabled=true --conf spark.eventLog.dir="/tmp" --driver-memory 3G --executor-memory 4G --class com.sparkProject.JobML /home/jean-michel/Documents/CoursSpark/tp_spark/target/scala-2.11/tp_spark-assembly-1.0.jar  pour exécuter le programme
+
+Messages obtenus et résultats :
+------------------------------------
+
+16/11/14 18:16:27 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/11/14 18:16:27 WARN Utils: Your hostname, jeanmichel-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+16/11/14 18:16:27 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+16/11/14 18:16:29 WARN SparkContext: Use an existing SparkContext, some configuration may not take effect.
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+16/11/14 18:16:36 WARN Utils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+16/11/14 18:16:39 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+16/11/14 18:16:39 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+16/11/14 18:20:30 WARN LogisticRegression: LogisticRegression training finished but the result is not converged because: max iterations reached
++--------------------+-----+----------+
+|         probability|label|prediction|
++--------------------+-----+----------+
+|[0.27295517332481...|  0.0|       1.0|
+|[0.00199558648455...|  1.0|       1.0|
+|[0.00877084838829...|  1.0|       1.0|
+|[6.93261314084974...|  1.0|       1.0|
+|[3.46560337277866...|  1.0|       1.0|
+|[5.61019267406966...|  1.0|       1.0|
+|[0.00215834276948...|  1.0|       1.0|
+|[0.25143710973490...|  1.0|       1.0|
+|[0.00308379828830...|  1.0|       1.0|
+|[0.03186659914739...|  1.0|       1.0|
+|[0.77141667385991...|  0.0|       0.0|
+|[0.01058351784078...|  1.0|       1.0|
+|[0.99999991559023...|  0.0|       0.0|
+|[0.00509373559524...|  1.0|       1.0|
+|[0.04121748635740...|  1.0|       1.0|
+|[0.00122949477609...|  1.0|       1.0|
+|[0.00314226802909...|  1.0|       1.0|
+|[0.00282131918653...|  1.0|       1.0|
+|[0.08700124166514...|  1.0|       1.0|
+|[0.01225290518385...|  1.0|       1.0|
+|[1.42744534694597...|  1.0|       1.0|
+|[0.01192564033574...|  1.0|       1.0|
+|[0.99999999990690...|  0.0|       0.0|
+|[0.99999674586152...|  0.0|       0.0|
+|[0.99999254940310...|  0.0|       0.0|
+|[0.00301755469098...|  1.0|       1.0|
+|[0.99999997794464...|  0.0|       0.0|
+|[0.99271587012264...|  0.0|       0.0|
+|[0.01083887792826...|  1.0|       1.0|
+|[0.99987593279733...|  0.0|       0.0|
+|[0.74360272916051...|  0.0|       0.0|
+|[0.01825362299715...|  1.0|       1.0|
+|[0.00324671861921...|  1.0|       1.0|
+|[0.00583541078132...|  1.0|       1.0|
+|[0.01108828306884...|  1.0|       1.0|
+|[0.78190046952382...|  1.0|       0.0|
+|[0.97442907293953...|  0.0|       0.0|
+|[0.03516744127875...|  1.0|       1.0|
+|[0.70010412565417...|  0.0|       0.0|
+|[0.02711545825524...|  1.0|       1.0|
+|[0.99999999999356...|  0.0|       0.0|
+|[0.99914506258631...|  0.0|       0.0|
+|[0.99988738963457...|  0.0|       0.0|
+|[0.99997385477421...|  0.0|       0.0|
+|[0.00117811067128...|  1.0|       1.0|
+|[0.90362395021925...|  0.0|       0.0|
+|[0.99999999900179...|  0.0|       0.0|
+|[0.99999974929418...|  0.0|       0.0|
+|[0.49707423698719...|  1.0|       1.0|
+|[6.57719446316194...|  1.0|       1.0|
++--------------------+-----+----------+
+only showing top 50 rows
+
+ROC sur les données de test = 0.9925033796239401
+
+
+
