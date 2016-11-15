@@ -4,6 +4,7 @@ Contenu du git :
 build.sbt
 plugins.sbt
 src.tar.gz qui contient le fichier src/main/scala/com/sparkProject/JobML.scala
+model.tar.gz qui contient le modèle sauvegardé
 
 
 Commande pour lancer le programme sur mon poste :
@@ -18,74 +19,80 @@ cd /home/jean-michel/Desktop/Spark/spark-2.0.0-bin-hadoop2.7/bin pour se positio
 Messages obtenus et résultats :
 ------------------------------------
 
-16/11/14 18:16:27 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-16/11/14 18:16:27 WARN Utils: Your hostname, jeanmichel-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
-16/11/14 18:16:27 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
-16/11/14 18:16:29 WARN SparkContext: Use an existing SparkContext, some configuration may not take effect.
+16/11/15 18:22:27 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/11/15 18:22:27 WARN Utils: Your hostname, jeanmichel-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+16/11/15 18:22:27 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+16/11/15 18:22:29 WARN SparkContext: Use an existing SparkContext, some configuration may not take effect.
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-16/11/14 18:16:36 WARN Utils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
-16/11/14 18:16:39 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
-16/11/14 18:16:39 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
-16/11/14 18:20:30 WARN LogisticRegression: LogisticRegression training finished but the result is not converged because: max iterations reached
-+--------------------+-----+----------+
+16/11/15 18:22:37 WARN Utils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+16/11/15 18:22:41 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+16/11/15 18:22:41 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+16/11/15 18:23:26 WARN LogisticRegression: LogisticRegression training finished but the result is not converged because: max iterations reached
++--------------------+-----+----------+                                         
 |         probability|label|prediction|
 +--------------------+-----+----------+
-|[0.27295517332481...|  0.0|       1.0|
-|[0.00199558648455...|  1.0|       1.0|
-|[0.00877084838829...|  1.0|       1.0|
-|[6.93261314084974...|  1.0|       1.0|
-|[3.46560337277866...|  1.0|       1.0|
-|[5.61019267406966...|  1.0|       1.0|
-|[0.00215834276948...|  1.0|       1.0|
-|[0.25143710973490...|  1.0|       1.0|
-|[0.00308379828830...|  1.0|       1.0|
-|[0.03186659914739...|  1.0|       1.0|
-|[0.77141667385991...|  0.0|       0.0|
-|[0.01058351784078...|  1.0|       1.0|
-|[0.99999991559023...|  0.0|       0.0|
-|[0.00509373559524...|  1.0|       1.0|
-|[0.04121748635740...|  1.0|       1.0|
-|[0.00122949477609...|  1.0|       1.0|
-|[0.00314226802909...|  1.0|       1.0|
-|[0.00282131918653...|  1.0|       1.0|
-|[0.08700124166514...|  1.0|       1.0|
-|[0.01225290518385...|  1.0|       1.0|
-|[1.42744534694597...|  1.0|       1.0|
-|[0.01192564033574...|  1.0|       1.0|
-|[0.99999999990690...|  0.0|       0.0|
-|[0.99999674586152...|  0.0|       0.0|
-|[0.99999254940310...|  0.0|       0.0|
-|[0.00301755469098...|  1.0|       1.0|
-|[0.99999997794464...|  0.0|       0.0|
-|[0.99271587012264...|  0.0|       0.0|
-|[0.01083887792826...|  1.0|       1.0|
-|[0.99987593279733...|  0.0|       0.0|
-|[0.74360272916051...|  0.0|       0.0|
-|[0.01825362299715...|  1.0|       1.0|
-|[0.00324671861921...|  1.0|       1.0|
-|[0.00583541078132...|  1.0|       1.0|
-|[0.01108828306884...|  1.0|       1.0|
-|[0.78190046952382...|  1.0|       0.0|
-|[0.97442907293953...|  0.0|       0.0|
-|[0.03516744127875...|  1.0|       1.0|
-|[0.70010412565417...|  0.0|       0.0|
-|[0.02711545825524...|  1.0|       1.0|
-|[0.99999999999356...|  0.0|       0.0|
-|[0.99914506258631...|  0.0|       0.0|
-|[0.99988738963457...|  0.0|       0.0|
-|[0.99997385477421...|  0.0|       0.0|
-|[0.00117811067128...|  1.0|       1.0|
-|[0.90362395021925...|  0.0|       0.0|
-|[0.99999999900179...|  0.0|       0.0|
-|[0.99999974929418...|  0.0|       0.0|
-|[0.49707423698719...|  1.0|       1.0|
-|[6.57719446316194...|  1.0|       1.0|
+|[0.99999996200921...|  0.0|       0.0|
+|[0.02755382425838...|  1.0|       1.0|
+|[0.99999892979357...|  0.0|       0.0|
+|[3.47455168876075...|  1.0|       1.0|
+|[0.99942000480997...|  0.0|       0.0|
+|[9.78928515642945...|  1.0|       1.0|
+|[0.00222109469231...|  1.0|       1.0|
+|[0.03496363691046...|  1.0|       1.0|
+|[0.02550052155688...|  1.0|       1.0|
+|[1.02813900760990...|  1.0|       1.0|
+|[0.93291212563386...|  1.0|       0.0|
+|[0.00558625899108...|  1.0|       1.0|
+|[0.98484857046229...|  0.0|       0.0|
+|[0.00636696594461...|  1.0|       1.0|
+|[4.32941881307349...|  1.0|       1.0|
+|[0.99965679185519...|  0.0|       0.0|
+|[0.01845207658470...|  1.0|       1.0|
+|[5.54295169198197...|  1.0|       1.0|
+|[0.99636148226967...|  0.0|       0.0|
+|[0.53360520131455...|  1.0|       0.0|
+|[0.00173639670436...|  1.0|       1.0|
+|[3.50344721858764...|  1.0|       1.0|
+|[0.01634242762846...|  1.0|       1.0|
+|[0.06748261825572...|  1.0|       1.0|
+|[0.00187960441489...|  1.0|       1.0|
+|[0.02351622936367...|  1.0|       1.0|
+|[0.04854796494703...|  1.0|       1.0|
+|[0.00488564801057...|  1.0|       1.0|
+|[0.99999995798496...|  0.0|       0.0|
+|[0.99987301598047...|  0.0|       0.0|
+|[0.01154880120015...|  1.0|       1.0|
+|[0.85467159747482...|  1.0|       0.0|
+|[0.99924997338282...|  0.0|       0.0|
+|[9.88394256073300...|  1.0|       1.0|
+|[0.01717375154975...|  1.0|       1.0|
+|[0.99996007318637...|  0.0|       0.0|
+|[0.99999973855620...|  0.0|       0.0|
+|[0.99999999985243...|  0.0|       0.0|
+|[0.90872433609579...|  0.0|       0.0|
+|[0.99426946265383...|  0.0|       0.0|
+|[0.05309617617156...|  1.0|       1.0|
+|[0.99998755648166...|  0.0|       0.0|
+|[0.99999860404028...|  0.0|       0.0|
+|[0.99870606501247...|  0.0|       0.0|
+|[0.97217626531418...|  0.0|       0.0|
+|[0.99999736196259...|  0.0|       0.0|
+|[0.99996137334398...|  0.0|       0.0|
+|[0.99641529211628...|  0.0|       0.0|
+|[0.56789352627756...|  0.0|       0.0|
+|[0.85631435736917...|  0.0|       0.0|
 +--------------------+-----+----------+
 only showing top 50 rows
 
-ROC sur les données de test = 0.9925033796239401
-
-
+ROC sur les données de test = 0.959248387330579                                 
++-----+----------+-----+                                                        
+|label|prediction|count|
++-----+----------+-----+
+|  1.0|       1.0|  211|
+|  0.0|       1.0|   17|
+|  1.0|       0.0|    8|
+|  0.0|       0.0|  361|
++-----+----------+-----+
 
